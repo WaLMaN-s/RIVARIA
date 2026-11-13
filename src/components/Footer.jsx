@@ -33,6 +33,13 @@ export default function Footer() {
           <div>
             <h2 className="footer__heading">Ikuti Kami</h2>
             <ul className="footer__list">
+              {whatsappUrl && (
+                <li>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <WhatsAppIcon size={16} /> {formatWhatsAppNumber()}
+                  </a>
+                </li>
+              )}
               <li>
                 <a href={site.instagram.url} target="_blank" rel="noopener noreferrer">
                   <InstagramIcon size={16} /> @{site.instagram.username}
@@ -43,13 +50,6 @@ export default function Footer() {
                   <TikTokIcon size={16} /> @{site.tiktok.username}
                 </a>
               </li>
-              {whatsappUrl && (
-                <li>
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                    <WhatsAppIcon size={16} /> {formatWhatsAppNumber()}
-                  </a>
-                </li>
-              )}
             </ul>
           </div>
 

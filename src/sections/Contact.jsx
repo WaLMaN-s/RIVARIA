@@ -53,18 +53,6 @@ export default function Contact() {
         <div className="contact__cards">
           <Reveal className="contact-card" delay={0}>
             <span className="contact-card__label">
-              <InstagramIcon size={18} /> Instagram
-            </span>
-            <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="contact-card__value">
-              @{site.instagram.username}
-            </a>
-            <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="link-line">
-              Kunjungi Profil <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
-            </a>
-          </Reveal>
-
-          <Reveal className="contact-card" delay={120}>
-            <span className="contact-card__label">
               <WhatsAppIcon size={18} /> WhatsApp
             </span>
             {whatsappUrl ? (
@@ -84,6 +72,18 @@ export default function Contact() {
                 </p>
               </>
             )}
+          </Reveal>
+
+          <Reveal className="contact-card" delay={100}>
+            <span className="contact-card__label">
+              <InstagramIcon size={18} /> Instagram
+            </span>
+            <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="contact-card__value">
+              @{site.instagram.username}
+            </a>
+            <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="link-line">
+              Kunjungi Profil <ArrowUpRight size={14} strokeWidth={1.75} aria-hidden="true" />
+            </a>
           </Reveal>
 
           <Reveal className="contact-card" delay={180}>

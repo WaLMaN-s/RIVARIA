@@ -99,6 +99,12 @@ export default function Navbar() {
       </header>
 
       <div
+        className={`mobile-menu-backdrop ${open ? 'is-open' : ''}`}
+        onClick={close}
+        aria-hidden="true"
+      />
+
+      <div
         id="mobile-menu"
         className={`mobile-menu ${open ? 'is-open' : ''}`}
         role="dialog"
@@ -107,24 +113,18 @@ export default function Navbar() {
         aria-hidden={!open}
       >
         <div className="mobile-menu__top">
-          <a
-            href="#home"
-            className="logo"
-            onClick={close}
-            tabIndex={open ? 0 : -1}
-            aria-label="RIVARIA Wedding Organizer — kembali ke atas"
-          >
-            <img src={logoIvory} alt="RIVARIA Wedding Organizer" className="logo__img" />
-          </a>
+          <span className="eyebrow">
+            <span className="eyebrow__num">RIVARIA</span> Menu
+          </span>
           <button
             type="button"
-            className="navbar__toggle"
+            className="navbar__toggle mobile-menu__close"
             onClick={close}
             aria-label="Tutup menu"
             tabIndex={open ? 0 : -1}
             style={{ display: 'inline-flex' }}
           >
-            <X size={24} strokeWidth={1.5} />
+            <X size={20} strokeWidth={1.5} />
           </button>
         </div>
 
@@ -145,19 +145,19 @@ export default function Navbar() {
         </nav>
 
         <div className="mobile-menu__footer">
-          <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
-            <InstagramIcon size={18} /> @{site.instagram.username}
-          </a>
-          <a href={site.tiktok.url} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
-            <TikTokIcon size={18} /> @{site.tiktok.username}
-          </a>
           {getWhatsAppUrl() && (
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
-              <WhatsAppIcon size={18} /> {formatWhatsAppNumber()}
+              <WhatsAppIcon size={15} /> {formatWhatsAppNumber()}
             </a>
           )}
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}>
-            <MapPin size={18} strokeWidth={1.5} aria-hidden="true" /> {site.serviceArea}
+          <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
+            <InstagramIcon size={15} /> @{site.instagram.username}
+          </a>
+          <a href={site.tiktok.url} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
+            <TikTokIcon size={15} /> @{site.tiktok.username}
+          </a>
+          <span className="mobile-menu__area">
+            <MapPin size={15} strokeWidth={1.5} aria-hidden="true" /> {site.serviceArea}
           </span>
         </div>
       </div>
